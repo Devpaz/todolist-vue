@@ -15,6 +15,19 @@
               :counter="50"
               :label="$t('todoApp.input')"
             ></v-text-field>
+            <div class="d-flex justify-center">
+              <v-radio-group v-model="category" row>
+                <v-radio
+                  label="Business"
+                  value="Business"
+                ></v-radio>
+                <v-radio
+                  label="Personal"
+                  value="Personal"
+                ></v-radio>
+              </v-radio-group>
+            </div>
+
             <v-btn type="submit" block class="mt-2" @click="submitTask">{{ $t('todoApp.addTask') }}</v-btn>
           </v-form>
         </v-col>
@@ -29,14 +42,16 @@
             <template v-slot:default>
               <thead>
                 <tr>
-                  <th class="text-4 text-md-h3 text-lg-h6">{{ $t('todoApp.task') }}</th>
-                  <th class="text-4 text-md-h3 text-lg-h6">{{ $t('todoApp.status') }}</th>
-                  <th class="text-4 text-md-h3 text-lg-h6">{{ $t('todoApp.actions') }}</th>
+                  <th class="text-4">{{ $t('todoApp.task') }}</th>
+                  <th class="text-4">{{ $t('todoApp.category') }}</th>
+                  <th class="text-4">{{ $t('todoApp.status') }}</th>
+                  <th class="text-4">{{ $t('todoApp.actions') }}</th>
                 </tr>
               </thead>
               <tbody>
                 <tr v-for="(task, index) in tasks" :key="index" class="justify-center">
                   <td :class="{ 'text-decoration-line-through ': task.status === 'finished' }">{{ task.name }}</td>
+                  <td>{{ task.category }}</td>
                   <td >
                     <v-alert
                     class="ma-2"
@@ -104,6 +119,7 @@ export default {
     return {
       alert:false,
       task: "",
+      category: null,
       validForm: true,
       editedTask: null,
       statuses: ["to-do", "in-progress", "finished"],
@@ -111,14 +127,17 @@ export default {
       tasks: [
         {
           name: "Steal bananas from the supermarket.",
+          category: 'Personal',
           status: "to-do",
         },
         {
           name: "Eat 1 kg chocolate in 1 hour.",
+          category: 'Personal',
           status: "in-progress",
         },
         {
           name: "Create YouTube video.",
+          category: 'Business',
           status: "finished",
         },
       ],
@@ -151,10 +170,12 @@ export default {
       } else {
         this.tasks.push({
           name: this.task,
+          category: this.category,
           status: "to-do",
         });
       }
       this.task = "";
+      this.category = null,
       this.alert=true;
 
       //Add duration alert
