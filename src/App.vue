@@ -7,7 +7,7 @@
     </v-navigation-drawer>
       <v-app-bar app color="primary" dark>
         <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
-        <v-toolbar-title>{{ $vuetify.lang.t('$vuetify.todoApp.title') }}</v-toolbar-title>
+        <v-toolbar-title>{{ $t('todoApp.title') }}</v-toolbar-title>
         <v-spacer></v-spacer>
         <v-btn icon>
           <v-icon>mdi-magnify</v-icon>

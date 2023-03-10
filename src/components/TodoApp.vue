@@ -3,19 +3,19 @@
     <v-container class="pa-md-8 mx-lg-auto">
       <v-row no-gutters align="center" justify="center">
         <v-col cols="12" sm="8">
-          <p class="text-h6 text-md-h5 text-lg-h4 text-center">{{ $vuetify.lang.t('$vuetify.todoApp.formTask') }}</p>
+          <p class="text-h6 text-md-h5 text-lg-h4 text-center">{{ $t('todoApp.formTask') }}</p>
           <v-form
             @submit.prevent
             ref="form"
-            v-model="valid"
+            v-model="validForm"
             lazy-validation
           >
             <v-text-field
               v-model="task"
               :counter="50"
-              label="My task"
+              :label="$t('todoApp.input')"
             ></v-text-field>
-            <v-btn type="submit" block class="mt-2" @click="submitTask">{{ $vuetify.lang.t('$vuetify.todoApp.addTask') }}</v-btn>
+            <v-btn type="submit" block class="mt-2" @click="submitTask">{{ $t('todoApp.addTask') }}</v-btn>
           </v-form>
         </v-col>
       </v-row>
@@ -24,14 +24,14 @@
     <v-container class="pa-md-8 mx-lg-auto">
       <v-row no-gutters align="center" justify="center">
         <v-col cols="12" sm="10">
-          <p class="text-h6 text-md-h5 text-lg-h4 text-center">{{ $vuetify.lang.t('$vuetify.todoApp.listTasks') }}</p>
+          <p class="text-h6 text-md-h5 text-lg-h4 text-center">{{ $t('todoApp.listTasks') }}</p>
           <v-simple-table>
             <template v-slot:default>
               <thead>
                 <tr>
-                  <th class="text-4 text-md-h3 text-lg-h6">{{ $vuetify.lang.t('$vuetify.todoApp.task') }}</th>
-                  <th class="text-4 text-md-h3 text-lg-h6">{{ $vuetify.lang.t('$vuetify.todoApp.status') }}</th>
-                  <th class="text-4 text-md-h3 text-lg-h6">{{ $vuetify.lang.t('$vuetify.todoApp.actions') }}</th>
+                  <th class="text-4 text-md-h3 text-lg-h6">{{ $t('todoApp.task') }}</th>
+                  <th class="text-4 text-md-h3 text-lg-h6">{{ $t('todoApp.status') }}</th>
+                  <th class="text-4 text-md-h3 text-lg-h6">{{ $t('todoApp.actions') }}</th>
                 </tr>
               </thead>
               <tbody>
@@ -104,6 +104,7 @@ export default {
     return {
       alert:false,
       task: "",
+      validForm: true,
       editedTask: null,
       statuses: ["to-do", "in-progress", "finished"],
       /* Status could be: 'to-do' / 'in-progress' / 'finished' */
