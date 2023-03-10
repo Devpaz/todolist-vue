@@ -5,7 +5,9 @@ const messages = {
   en: {
       todoApp: {
         title: 'My ToDo App',
-        formTask:'Form Tasks',
+        category: 'Category',
+        formTask: 'Form to add task',
+        personal: 'Personal',
         input: 'My task',
         addTask: 'Add Task',
         listTasks: 'List Tasks',
@@ -20,7 +22,8 @@ const messages = {
   es: {
       todoApp: {
         title: 'Lista de Tareas',
-        formTask:'Formulario de Tareas',
+        category: 'Categoría',
+        formTask:'Formulario para añadir tarea',
         input: 'Mi Tarea',
         addTask: 'Agregar Tarea',
         listTasks: 'Lista de Tareas',
