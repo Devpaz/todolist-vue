@@ -155,8 +155,13 @@ export default {
       }
       this.task = "";
       this.alert=true;
+
+      //Add duration alert
+      setTimeout(()=>{
+        this.alert=false
+      },2000)
     },
-  },
+  }
 };
 </script>
 
