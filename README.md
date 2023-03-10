@@ -1,4 +1,4 @@
-# vuetify2
+# vuetify2 with vue-i18n
 
 ## Project setup
 ```
