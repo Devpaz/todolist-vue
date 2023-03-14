@@ -1,5 +1,8 @@
 <template>
   <div>
+    <v-container>
+      <ToDoNewTask />
+    </v-container>
     <v-container class="pa-md-8 mx-lg-auto">
       <v-row no-gutters align="center" justify="center">
         <v-col cols="12" sm="8">
@@ -110,8 +113,12 @@
 </template>
 
 <script>
+import ToDoNewTask from './ToDoNewTask.vue';
 export default {
   name: "TodoApp",
+  components: {
+    ToDoNewTask
+  },
   props: {
     msg: String,
   },
