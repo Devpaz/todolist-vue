@@ -31,23 +31,24 @@ export default new Vuex.Store({
       ],
     },
     mutations: {
-        capitalizeFirstChar(str) {
-            return str.charAt(0).toUpperCase() + str.slice(1);
-          },
+        // capitalizeFirstChar(state, str) {
+        //     return str.charAt(0).toUpperCase() + str.slice(1);
+        //     console.log('sds' + str.charAt(0).toUpperCase());
+        // },
       
-          changeStatus(index) {
-            let newIndex = this.statuses.indexOf(this.tasks[index].status);
+          changeStatus(state, index) {
+            let newIndex = state.statuses.indexOf(state.tasks[index].status);
             if (++newIndex > 2) newIndex = 0;
-            this.tasks[index].status = this.statuses[newIndex];
+            state.tasks[index].status = state.statuses[newIndex];
       
           },
-          deleteTask(index) {
-            this.tasks.splice(index, 1);
+          deleteTask(state, index) {
+            state.tasks.splice(index, 1);
           },
       
-          editTask(index) {
-            this.task = this.tasks[index].name;
-            this.editedTask = index;
+          editTask(state, index) {
+            state.task = state.tasks[index].name;
+            state.editedTask = index;
           },
           submitTask(state) {
             if (state.task.length === 0 || state.task.length > 50) return;
