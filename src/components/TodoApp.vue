@@ -115,10 +115,12 @@
 
 <script>
 import ToDoNewTask from './ToDoNewTask.vue';
+import ToDoList from './ToDoList.vue'
 export default {
   name: "TodoApp",
   components: {
-    ToDoNewTask
+    ToDoNewTask,
+    ToDoList
   },
   props: {
     msg: String,
