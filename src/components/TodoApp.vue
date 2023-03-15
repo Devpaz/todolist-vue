@@ -2,6 +2,7 @@
   <div>
     <v-container>
       <ToDoNewTask />
+      <ToDoList />
     </v-container>
     <v-container class="pa-md-8 mx-lg-auto">
       <v-row no-gutters align="center" justify="center">
