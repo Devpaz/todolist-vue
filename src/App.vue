@@ -21,18 +21,21 @@
       </v-app-bar>
     <v-main>
       <TodoApp/>
+      <CountComponent/>
     </v-main>
   </v-app>
 </template>
 
 <script>
 import TodoApp from '@/components/TodoApp';
+import CountComponent from './components/CountComponent.vue';
 
 export default {
   name: 'App',
 
   components: {
     TodoApp,
+    CountComponent
   },
 
   data: () => ({
