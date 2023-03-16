@@ -16,7 +16,9 @@ const messages = {
         actions: 'Actions',
         todo:'To-do',
         inProgress: 'In-progress',
-        finished:'Finished'
+        finished:'Finished',
+        personal:'Personal',
+        business:'Business'
       },
   },
   es: {
@@ -32,7 +34,9 @@ const messages = {
         actions: 'Acciones',
         todo:'Por hacer',
         inProgress: 'En Proceso',
-        finished:'Finalizado'
+        finished:'Finalizado',
+        personal:'Personal',
+        business:'Negocio'
       },
   },
 }

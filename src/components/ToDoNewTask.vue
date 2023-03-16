@@ -17,11 +17,11 @@
             <div class="d-flex justify-center">
               <v-radio-group v-model="category" row>
                 <v-radio
-                  label="Business"
+                  :label="$t('todoApp.business')"
                   value="Business"
                 ></v-radio>
                 <v-radio
-                  label="Personal"
+                  :label="$t('todoApp.personal')"
                   value="Personal"
                 ></v-radio>
               </v-radio-group>
