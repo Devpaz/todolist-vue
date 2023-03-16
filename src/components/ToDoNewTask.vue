@@ -11,7 +11,7 @@
           >
             <v-text-field
               v-model="task"
-              :counter="50"
+              :counter="40"
               :label="$t('todoApp.input')"
             ></v-text-field>
             <div class="d-flex justify-center">
@@ -26,7 +26,6 @@
                 ></v-radio>
               </v-radio-group>
             </div>
-
             <v-btn type="submit" block class="mt-2" @click="submitTask">{{ $t('todoApp.addTask') }}</v-btn>
           </v-form>
         </v-col>
@@ -63,10 +62,10 @@ export default {
             set(value) {
                 this.$store.commit('updateCategory', value)
             }
-        }
+        },      
     },
     methods: {
-        ...mapMutations(['submitTask'])
+        ...mapMutations(['submitTask',])
     }
 
 }

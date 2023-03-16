@@ -5,9 +5,11 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
     state: {
-        alert:false,
+      alert:false,
+      msgAlert:'',
+      typeAlert:'success',
       task: "",
-      category: null,
+      category: 'Personal',
       validForm: true,
       editedTask: null,
       statuses: ["to-do", "in-progress", "finished"],
@@ -43,33 +45,42 @@ export default new Vuex.Store({
       
           },
           deleteTask(state, index) {
+            state.alert=true,
+            state.msgAlert='Task deleted successfully';
+            state.typeAlert='error';
             state.tasks.splice(index, 1);
           },
       
           editTask(state, index) {
             state.task = state.tasks[index].name;
+            state.category = state.tasks[index].category;
             state.editedTask = index;
           },
           submitTask(state) {
-            if (state.task.length === 0 || state.task.length > 50) return;
+            if (state.task.length === 0 || state.task.length > 40) return;
             if (state.editedTask != null) {
                 state.tasks[state.editedTask].name = state.task;
+                state.tasks[state.editedTask].category = state.category;
                 state.editedTask = null;
+                state.msgAlert='Task updated successfully';
+                state.typeAlert='info'
             } else {
                 state.tasks.push({
                 name: state.task,
                 category: state.category,
                 status: "to-do",
               });
+              state.msgAlert='Task created successfully',
+              state.typeAlert='success'
             }
-            state.task = "";
-            state.category = null,
-            state.alert=true;
+            state.task = "",
+            state.category = 'Personal',
+            state.alert=true,
       
             //Add duration alert
             setTimeout(()=>{
                 state.alert=false
-            },2000)
+            },3000)
           },
         updateValidForm(state, payload) {
             state.validForm = payload

@@ -18,7 +18,10 @@ const messages = {
         inProgress: 'In-progress',
         finished:'Finished',
         personal:'Personal',
-        business:'Business'
+        business:'Business',
+        msgAlert:{
+          success:"mensaje verde",
+        }
       },
   },
   es: {

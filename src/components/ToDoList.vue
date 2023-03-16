@@ -66,8 +66,8 @@
     </v-row>
     <v-divider inset></v-divider>
     <div class="justify-center ma-8">
-      <v-alert type="success" class="ma-6" :value="alert">
-      <p>Task created successfully</p>
+      <v-alert :type="typeAlert" class="ma-6" :value="alert">
+      <p>{{msgAlert}}</p>
       </v-alert>
     </div>
     </v-container>
@@ -78,7 +78,7 @@ import { mapState, mapMutations } from 'vuex'
 export default {
     name: 'ToDoList',
     computed: {
-        ...mapState(['tasks', 'alert'])
+        ...mapState(['tasks', 'alert','msgAlert','typeAlert'])
     },
     methods: {
         ...mapMutations(['changeStatus', 'capitalizeFirstChar', 'editTask', 'deleteTask'])
