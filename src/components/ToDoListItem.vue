@@ -1,0 +1,63 @@
+<template>
+    <tr class="justify-center">
+    <td :class="{ 'text-decoration-line-through ': task.status === 'finished' }">{{ task.name }}</td>
+    <td>{{ task.category }}</td>
+    <td >
+        <v-alert
+        class="ma-2"
+        @click="changeStatus(index)"
+        dense
+        text
+        :class="{
+            'danger': task.status === 'to-do',
+            'success': task.status === 'finished',
+            'warning': task.status === 'in-progress',
+        }"
+        >
+        <strong>
+            <!-- {{ capitalizeFirstChar(task.status) }} -->
+            {{ task.status }}
+        </strong>
+        </v-alert>
+    </td>
+    <td>
+    <v-btn
+        class="ma-2"
+        @click="editTask(index)"
+        color="info"
+        fab
+        small
+        dark
+    >
+        <v-icon>mdi-pencil</v-icon>
+    </v-btn>
+    <v-btn
+        class="ma-2"
+        @click="deleteTask(index)"
+        color="error"
+        fab
+        small
+        dark
+    >
+        <v-icon>mdi-delete</v-icon>
+    </v-btn>
+    </td>
+
+    </tr>
+
+</template>
+
+<script>
+import { mapState, mapMutations } from 'vuex'
+export default {
+    props: ['task','index'],
+    methods: {
+        ...mapMutations(['changeStatus', 'capitalizeFirstChar', 'editTask', 'deleteTask'])
+    }
+
+}
+</script>
+
+<style>
+
+</style>
