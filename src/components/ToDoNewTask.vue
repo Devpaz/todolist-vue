@@ -2,7 +2,6 @@
     <v-container class="pa-md-8 mx-lg-auto">
       <v-row no-gutters align="center" justify="center">
         <v-col cols="12" sm="8">
-          <p class="text-h6 text-md-h5 text-lg-h4 text-center">{{ $t('todoApp.formTask') }}</p>
           <v-form
             @submit.prevent
             ref="form"
