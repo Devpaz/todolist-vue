@@ -50,11 +50,25 @@
 <script>
 import { mapState, mapMutations } from 'vuex'
 export default {
-    props: ['task','index'],
-    methods: {
-        ...mapMutations(['changeStatus', 'capitalizeFirstChar', 'editTask', 'deleteTask'])
+  props: {
+    task: {
+      type: Object,
+      required: true,
+      default: () => ({
+          name: '',
+          category: '',
+          status: ''
+       })
+    },
+    index: {
+      type: Number,
+      required: true,
+      default: 100
     }
-
+  },
+  methods: {
+    ...mapMutations(['changeStatus', 'capitalizeFirstChar', 'editTask', 'deleteTask'])
+  }
 }
 </script>
 
