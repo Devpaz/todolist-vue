@@ -37,12 +37,12 @@ export default new Vuex.Store({
         //     return str.charAt(0).toUpperCase() + str.slice(1);
         //     console.log('sds' + str.charAt(0).toUpperCase());
         // },
-      
+
           changeStatus(state, index) {
             let newIndex = state.statuses.indexOf(state.tasks[index].status);
             if (++newIndex > 2) newIndex = 0;
             state.tasks[index].status = state.statuses[newIndex];
-      
+
           },
           deleteTask(state, index) {
             state.alert=true,
@@ -50,7 +50,7 @@ export default new Vuex.Store({
             state.typeAlert='error';
             state.tasks.splice(index, 1);
           },
-      
+
           editTask(state, index) {
             state.task = state.tasks[index].name;
             state.category = state.tasks[index].category;
@@ -76,7 +76,7 @@ export default new Vuex.Store({
             state.task = "",
             state.category = 'Personal',
             state.alert=true,
-      
+
             //Add duration alert
             setTimeout(()=>{
                 state.alert=false

@@ -1,50 +1,50 @@
 <template>
-    <tr class="justify-center">
-    <td :class="{ 'text-decoration-line-through ': task.status === 'finished' }">{{ task.name }}</td>
+  <tr class="justify-center">
+    <td :class="{ 'text-decoration-line-through ': task.status === 'finished' }">
+      {{ task.name }}
+    </td>
     <td>{{ task.category }}</td>
-    <td >
-        <v-alert
+    <td>
+      <v-alert
         class="ma-2"
-        @click="changeStatus(index)"
         dense
         text
         :class="{
-            'danger': task.status === 'to-do',
-            'success': task.status === 'finished',
-            'warning': task.status === 'in-progress',
+          'danger': task.status === 'to-do',
+          'success': task.status === 'finished',
+          'warning': task.status === 'in-progress',
         }"
-        >
+        @click="changeStatus(index)"
+      >
         <strong>
-            <!-- {{ capitalizeFirstChar(task.status) }} -->
-            {{ task.status }}
+          <!-- {{ capitalizeFirstChar(task.status) }} -->
+          {{ task.status }}
         </strong>
-        </v-alert>
+      </v-alert>
     </td>
     <td>
-    <v-btn
+      <v-btn
         class="ma-2"
-        @click="editTask(index)"
         color="info"
         fab
         small
         dark
-    >
+        @click="editTask(index)"
+      >
         <v-icon>mdi-pencil</v-icon>
-    </v-btn>
-    <v-btn
+      </v-btn>
+      <v-btn
         class="ma-2"
-        @click="deleteTask(index)"
         color="error"
         fab
         small
         dark
-    >
+        @click="deleteTask(index)"
+      >
         <v-icon>mdi-delete</v-icon>
-    </v-btn>
+      </v-btn>
     </td>
-
-    </tr>
-
+  </tr>
 </template>
 
 <script>

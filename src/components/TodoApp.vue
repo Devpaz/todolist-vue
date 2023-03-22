@@ -1,13 +1,16 @@
 <template>
   <div>
     <v-container>
-      <p class="text-h6 text-md-h5 text-lg-h4 text-center">{{ $t('todoApp.formTask') }}</p>
+      <p class="text-h6 text-md-h5 text-lg-h4 text-center">
+        {{ $t('todoApp.formTask') }}
+      </p>
       <ToDoNewTask />
-      <p class="text-h6 text-md-h5 text-lg-h4 text-center">{{ $t('todoApp.listTasks') }}</p>
+      <p class="text-h6 text-md-h5 text-lg-h4 text-center">
+        {{ $t('todoApp.listTasks') }}
+      </p>
       <ToDoList />
-    </v-container> 
+    </v-container>
   </div>
-
 </template>
 
 <script>
