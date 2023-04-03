@@ -10,6 +10,7 @@ const messages = {
         personal: 'Personal',
         input: 'My task',
         addTask: 'Add Task',
+        updateTask :'Update Task',
         listTasks: 'List Tasks',
         task:'Task',
         status: 'Status',
@@ -31,6 +32,7 @@ const messages = {
         formTask:'Formulario para añadir tarea',
         input: 'Mi Tarea',
         addTask: 'Agregar Tarea',
+        updateTask :'Actualizar Tarea',
         listTasks: 'Lista de Tareas',
         task:'Tarea',
         status: 'Estados',
@@ -39,7 +41,10 @@ const messages = {
         inProgress: 'En Proceso',
         finished:'Finalizado',
         personal:'Personal',
-        business:'Negocio'
+        business:'Negocio',
+        msgAlert:{
+          success:"mensaje verde",
+        }
       },
   },
 }

@@ -28,7 +28,7 @@
         color="info"
         fab
         small
-        dark
+        :disabled="task.status === 'finished'"
         @click="editTask(index)"
       >
         <v-icon>mdi-pencil</v-icon>
@@ -38,7 +38,7 @@
         color="error"
         fab
         small
-        dark
+        :disabled="task.status === 'finished'"
         @click="deleteTask(index)"
       >
         <v-icon>mdi-delete</v-icon>
