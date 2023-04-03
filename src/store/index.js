@@ -8,7 +8,7 @@ export default new Vuex.Store({
       alert:false,
       msgAlert:'',
       typeAlert:'success',
-      task: "",
+      task: '',
       category: 'Personal',
       validForm: true,
       editedTask: null,
