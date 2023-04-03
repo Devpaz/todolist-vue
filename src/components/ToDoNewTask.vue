@@ -41,7 +41,7 @@
             class="mt-2"
             @click="submitTask"
           >
-            {{ $t('todoApp.addTask') }}
+          {{ this.$store.state.task ? $t('todoApp.updateTask') : $t('todoApp.addTask') }}
           </v-btn>
         </v-form>
       </v-col>
